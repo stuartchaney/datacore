@@ -1620,8 +1620,6 @@ module Aws
             @instance[:aws_platform] = @text
           when 'availabilityZone' then
             @instance[:aws_availability_zone] = @text
-          when 'privateIpAddress' then
-            @instance[:aws_private_ip_address] = @text
           when 'key' then
             @tag_key = @text
           when 'value' then
