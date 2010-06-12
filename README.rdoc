@@ -1,28 +1,29 @@
- == Introduction:
+== Introduction:
 
--Simple Ruby Interface for AWS.
+ -Simple Ruby Interface for AWS
 
- == Installation:
+== Installation:
 
-  gem install datacore
+ gem install datacore
 
--You must also have access to an Amazon Web Services {access keyID}[https://aws-portal.amazon.com/gp/aws/developer/registration/index.html].
+ -You must also have access to an Amazon Web Services {access keyID}[https://aws-portal.amazon.com/gp/aws/developer/registration/index.html]
  
- == Description:
+== Description:
    
--Ruby Interface to Amazon EC2, S3, SQS, SDB, and CloudFront.
+ -Ruby Interface to Amazon EC2, S3, SQS, SDB, and CloudFront.
  
-- AWS::Ec2 - interface to Amazon EC2
-- AWS::S3 - interface to Amazon S3 
-- AWS::Sqs - interface to Amazon SQS
-- AWS::AcfInterface - interface to Amazon CloudFront, a content distribution service
+ - AWS::Ec2 - interface to Amazon EC2
+ - AWS::S3 - interface to Amazon S3 
+ - AWS::Sqs - interface to Amazon SQS
+ - AWS::AcfInterface - interface to Amazon CloudFront, a content distribution service
  
- == Features:
+== Features:
 
-- Error handling: AWSError will be rasied
-- Persistent HTTP connections with robust network-level retry layer
-- Parsing of reponses through REXML.
-- S3 list operations support. Key folders and buckets containing more than a thousand keys are listed in full.  Operations based on list work on arbitrary numbers of keys.
+ - Error handling: AWSError will be rasied
+ - Persistent HTTP connections with robust network-level retry layer
+ - Parsing of reponses through REXML.
+ - S3 list operations support. Key folders and buckets containing more than a thousand keys are listed in full.  Operations based on list work on arbitrary numbers of keys.
 
- == Issues
-- There are a number of known issues at this time. Work will be carried out to make sure that the gem is as up to date as possible
+== Issues
+
+ - There are a number of known issues at this time. Work will be carried out to make sure that the gem is as up to date as possible

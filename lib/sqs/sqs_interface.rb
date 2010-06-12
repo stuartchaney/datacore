@@ -139,7 +139,9 @@ module Aws
       #
       service_params          = signed_service_params(@aws_secret_access_key, service_hash, :post, @params[:server], service)
       request                 = Net::HTTP::Post.new(AwsUtils::URLencode(service))
-      request['Content-Type'] = 'application/x-www-form-urlencoded; charset=utf-8'
+      request['Content-Type'] = 'application/x-www-form-urlencoded'
+
+
       request.body            = service_params
       # prepare output hash
       {:request  => request,
