@@ -183,19 +183,10 @@ module Aws
     # Sends request to Amazon and parses the response.
     # Raises AwsError if any banana happened.
     def request_info(request, parser, options={}, &block) # :nodoc:
-#      request_info2(request, parser, @params, :s3_connection, @logger, @@bench, options, &block)
       request_info3(self, request, parser, options, &block)
     end
 
 
-    # Returns an array of customer's buckets. Each item is a +hash+.
-    #
-    #  s3.list_all_my_buckets #=>
-    #    [{:owner_id           => "00000000009314cc309ffe736daa2b264357476c7fea6efb2c3347ac3ab2792a",
-    #      :owner_display_name => "root",
-    #      :name               => "bucket_name",
-    #      :creation_date      => "2007-04-19T18:47:43.000Z"}, ..., {...}]
-    #
     def list_all_my_buckets(headers={})
       req_hash = generate_rest_request('GET', headers.merge(:url=>''))
       request_info(req_hash, S3ListAllMyBucketsParser.new(:logger => @logger))
