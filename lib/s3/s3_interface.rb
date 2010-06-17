@@ -336,7 +336,6 @@ module Aws
         if (there_are_more_keys)
           internal_options[:marker] = decide_marker(response)
           total_results             = response[:contents].length + response[:common_prefixes].length
-          internal_options[:'max-keys'] ? (internal_options[:'max-keys'] -= total_results) : nil
         end
         yield response
       end while there_are_more_keys && under_max_keys(internal_options)
@@ -357,7 +356,7 @@ module Aws
       elsif (!last_prefix)
         last_key.dup
       else
-        last_key > last_prefix ? last_key.dup : last_prefix.dup
+        last_key >= last_prefix ? last_key.dup : last_prefix.dup
       end
     end
 
