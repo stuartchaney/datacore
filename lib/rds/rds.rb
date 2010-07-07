@@ -22,9 +22,9 @@ module Aws
 
 
         @@bench = AwsBenchmarkingBlock.new
- def self.bench
-      @@bench
-    end
+         def self.bench
+          @@bench
+         end
 
         def self.bench_xml
             @@bench.xml
@@ -44,6 +44,7 @@ module Aws
                    :default_service => uri ? uri.path : DEFAULT_PATH,
                    :default_protocol => uri ? uri.scheme : DEFAULT_PROTOCOL,
             :api_version => API_VERSION },
+              #make sure aws keys correlate
                  aws_access_key_id || ENV['AWS_ACCESS_KEY_ID'],
                  aws_secret_access_key|| ENV['AWS_SECRET_ACCESS_KEY'],
                  params)
@@ -65,6 +66,7 @@ module Aws
                                                           "IPRanges"],
                                            :pull_out_array=>options[:pull_out_array],
                                            :pull_out_single=>options[:pull_out_single],
+                                          #must specify wrapper options
                                            :wrapper=>options[:wrapper])
         end
 
