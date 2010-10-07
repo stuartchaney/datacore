@@ -31,7 +31,7 @@ module Aws
     @@api = ENV['ELB_API_VERSION'] || API_VERSION
 
     def self.api
-      @@api
+      return @@api if @@api.present?
     end
 
 
@@ -52,6 +52,7 @@ module Aws
     # Raises AwsError if any banana happened
     def request_info(request, parser, options={})
       request_info2(request, parser, @params, :elb_connection, @logger, @@bench, options)
+      #request once
     end
 
     # todo: convert to xml-simple version and get rid of parser below
