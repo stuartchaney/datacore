@@ -206,7 +206,7 @@ module Aws
 
     def list_streaming_distributions
       request_hash = generate_request('GET', 'streaming-distribution')
-      request_cache_or_info :list_streaming_distributions, request_hash, AcfStreamingDistributionListParser, @@bench
+      return request hash
     end
 
     # Create a new distribution.
