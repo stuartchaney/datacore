@@ -226,7 +226,8 @@ module Aws
     #
     def create_distribution(origin, comment='', enabled=true, cnames=[], caller_reference=nil, default_root_object=nil)
       body         = distribution_config_for(origin, comment, enabled, cnames, caller_reference, false, default_root_object)
-      request_hash = generate_request('POST', 'distribution', body.strip)
+      #request_hash = generate_request('POST', 'distribution', body.strip)
+      request_hash = generate_request('POST', 'distribution')
       merge_headers(request_info(request_hash, AcfDistributionParser.new))
     end
 
