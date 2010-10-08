@@ -95,6 +95,22 @@ module Aws
     # options:
     #    :path => specify a path you want it stored in
     #    :certificate_chain => contents of certificate chain
+    def upload_server_certificate(name, public_key, private_key, options={})
+      params                          = {}
+      params['ServerCertificateName'] = name
+      params['PrivateKey']            = private_key
+      params['CertificateBody']       = public_key
+
+      params['CertificateChain'] = options[:certificate_chain] if options[:certificate_chain]
+      params['Path'] = options[:path] if options[:path]
+
+      p params
+
+      resp = do_request("UploadServerCertificate", params, :pull_out_array=>[:list_server_certificates_result, :server_certificate_metadata_list])
+
+
+    rescue Exception
+      on_exception
     end
 
 
