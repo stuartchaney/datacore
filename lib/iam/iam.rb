@@ -84,7 +84,7 @@ module Aws
       resp = do_request("ListServerCertificates", params, :pull_out_array=>[:list_server_certificates_result, :server_certificate_metadata_list])
 
 
-    rescue Exception
+    rescue Exception ##if returning nil, pass through more specific exception
       on_exception
     end
 
