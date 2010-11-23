@@ -250,7 +250,7 @@ module Aws
       #  bucket.key('my_cool_key').delete #=> https://s3.amazonaws.com:443/my_awesome_bucket/my_cool_key?Signature=B...D&Expires=1180820098&AWSAccessKeyId=1...2
       #
       def key(name)
-        Key.new(self, name)
+        @key = Key.new(self, name)
       end
 
       # Generates link to PUT key data.
