@@ -333,6 +333,7 @@ module Aws
       #
       def delete(expires=nil, headers={})
         @bucket.s3.interface.delete_link(@bucket.to_s, @name, expires, headers)
+        return if @bucket.empty?
       end
 
       # Generate link to head key.
