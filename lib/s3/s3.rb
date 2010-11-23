@@ -64,6 +64,7 @@ module Aws
     end
 
     require_relative 'bucket'
+    #check this against other requires
     require_relative 'key'
     require_relative 'grantee'
 
@@ -203,7 +204,7 @@ module Aws
       attr_reader :s3, :name
 
       def to_s
-        @name
+        return @name
       end
 
       alias_method :full_name, :to_s
@@ -230,6 +231,7 @@ module Aws
       # Return a link to create this bucket.
       #
       def create_link(expires=nil, headers={})
+        @s3.initialize
         @s3.interface.create_bucket_link(@name, expires, headers)
       end
 
