@@ -164,8 +164,6 @@ module Aws
     #
     def revoke(*permissions)
       permissions.flatten!
-      old_perms = @perms.dup
-      @perms    -= permissions
       @perms.uniq!
       return true if @perms == old_perms
       apply
