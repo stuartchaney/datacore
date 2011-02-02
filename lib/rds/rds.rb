@@ -137,7 +137,6 @@ module Aws
             if final_snapshot_identifier
                 params['FinalDBSnapshotIdentifier'] = final_snapshot_identifier
             else
-                params['SkipFinalSnapshot'] = true
             end
 
             link = do_request("DeleteDBInstance", params, :pull_out_single=>[:delete_db_instance_result, :db_instance])
