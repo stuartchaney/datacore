@@ -223,7 +223,6 @@ module Aws
         grants << "<Grant>" +
             "<Grantee xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" " +
             "xsi:type=\"#{type}\">#{id_str}</Grantee>" +
-            "<Permission>#{perm}</Permission>" +
             "</Grant>"
       end
       grants
