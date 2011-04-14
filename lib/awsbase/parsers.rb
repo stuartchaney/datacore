@@ -34,6 +34,14 @@ module Aws
       ;
     end
 
+    def on_cycle_end(data)
+      @right_aws_parser.tag_end(data)
+    end
+
+    def on_start()
+      
+    end
+
     def on_cdata_block(cdata)
       ;
     end
