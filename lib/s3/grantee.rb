@@ -211,8 +211,6 @@ module Aws
       @perms.uniq!
       owner, grantees = self.class.owner_and_grantees(@thing)
       # walk through all the grantees and replace the data for the current one and ...
-      grantees.map! { |grantee| grantee.id == @id ? self : grantee }
-      # ... if this grantee is not known - add this bad boy to a list
       grantees << self unless grantees.include?(self)
       # set permissions
       self.class.put_acl(@thing, owner, grantees)
